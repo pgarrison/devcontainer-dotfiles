@@ -6,7 +6,6 @@ mkdir -p ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
 cp .zshrc ~/.zshrc
 cp .bash_aliases ~/.bash_aliases
-cp .bashrc ~/.bashrc
 
 # Install vim-plug for neovim
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
