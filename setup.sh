@@ -1,12 +1,14 @@
 #!/bin/sh
-# This devcontainer folder is mounted at $CONFIG_MOUNT
-# The files in this folder should not be symlinks, docker will have trouble on MacOS
-# WARNING: If you edit this file you may have to manually delete the dev container and restart the docker daemon before rebuilding the container with the updated config
+# Install oh-my-zsh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
 mkdir -p ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
-cp .zprofile ~/.zprofile
 cp .zshrc ~/.zshrc
 cp .bash_aliases ~/.bash_aliases
 
-# Install oh-my-zsh
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+# Install vim-plug for neovim
+curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install neovim plugins
+nvim +'PlugInstall --sync' +qa
