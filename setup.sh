@@ -12,3 +12,7 @@ curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --c
 
 # Install neovim plugins
 nvim +'PlugInstall --sync' +qa
+
+# Install zsh theme 'pure'
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"

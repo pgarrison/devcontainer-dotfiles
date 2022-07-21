@@ -26,5 +26,10 @@ bindkey ' ' magic-space
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
+# Prompt
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit; promptinit
+prompt pure
+
 # shared aliases
 source ~/.bash_aliases
